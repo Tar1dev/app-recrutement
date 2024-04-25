@@ -1,1 +1,0 @@
-const offerDetailsCard = document.getElementById("offer-details-card");
