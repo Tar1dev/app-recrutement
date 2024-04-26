@@ -3,7 +3,7 @@
 ## Déploiement de l'application :
 ⚠️ *Placez-vous dans le répertoire de l'application.*
 - ### Installation des dépendances
-  - ```npx install```
+  - ```npm install```
 - ### Initialisation de prisma
   - ```npx prisma init```
 - ### Lancement de l'application
