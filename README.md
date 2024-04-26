@@ -9,6 +9,7 @@
 - ### Lancement de l'application
   - ```sudo docker-compose up -d```
 - ### Synchronisation avec la base de données
-  - ```sudo npx prisma migrate dev``
+  - ```sudo npx prisma migrate dev```
+  - ```sudo npx prisma generate```
 
 ⚠️ Par défaut, l'application se lance sur le port 3000.
