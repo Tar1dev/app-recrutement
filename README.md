@@ -2,7 +2,13 @@
 
 ## Déploiement de l'application :
 ⚠️ *Placez-vous dans le répertoire de l'application.*
-- ```sudo docker-compose up```\
-*Cette commande aura pour effet la création d'un répertoire "data" qui contient la base de données*
+- ### Installation des dépendances
+  - ```npx install```\
+- ### Initialisation de prisma
+  - ```npx prisma init```\
+- ### Lancement de l'application
+  - ```sudo docker-compose up -d```\
+- ### Synchronisation avec la base de données
+  - ```sudo npx prisma migrate dev```\
 
 ⚠️ Par défaut, l'application se lance sur le port 3000.
