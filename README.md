@@ -1,6 +1,7 @@
 # App de recrutement
-### Le cahier des charges et les consignes se trouvent dans les pdf
 
 ## Déploiement de l'application :
-- ```docker build -t app:1.0 .```
-- ```docker run -t -d app:1.0 -p 3000:3000```
+⚠️ *Placez-vous dans le répertoire de l'application.*
+- ```sudo docker-compose up```
+*Cette commande aura pour effet la création d'un répertoire "data" qui contient la base de données*
+⚠️ Par défaut, l'application se lance sur le port 3000.
