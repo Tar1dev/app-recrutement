@@ -12,4 +12,5 @@
   - ```sudo npx prisma migrate dev```
   - ```sudo npx prisma generate```
 
-⚠️ Par défaut, l'application se lance sur le port 3000.
+⚠️ Par défaut, l'application se lance sur le port 3000. Pour des raisons de sécurité évidentes, le fichier .env n'est pas sur le repo.
+Il faut donc le créer et spécifier le "PORT" puis la "DATABASE_URL"
