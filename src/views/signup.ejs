@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/public/bootstrap.min.css">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f8f9fa;
+        }
+        .signup-container {
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .signup-container h2 {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            font-weight: bold;
+        }
+        .btn-signup {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="signup-container col-md-4">
+        <h2 class="text-center">Créer un Compte</h2>
+        <form method="post">
+            <div class="form-group">
+                <label for="email">Adresse Email</label>
+                <input type="email" class="form-control" id="email" placeholder="Entrez votre email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Mot de Passe</label>
+                <input type="password" class="form-control" id="password" name="password" placeholder="Entrez votre mot de passe" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Confirmation Mot de Passe</label>
+                <input type="password" class="form-control" id="cpassword" name="cpassword" placeholder="Entrez de nouveau votre mot de passe" required>
+            </div>
+            <div class="form-group">
+                <label for="accountType">Type de Compte</label>
+                <select class="form-control" id="accountType" name="acctype" required>
+                    <option value="">Sélectionnez le type de compte</option>
+                    <option value="recruteur">Recruteur</option>
+                    <option value="chercheurEmploi">Chercheur d'Emploi</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary btn-signup mt-3">Créer un Compte</button>
+        </form>
+    </div>
+</html>

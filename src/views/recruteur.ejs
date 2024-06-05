@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gérer les Offres d'Emploi - Application de Recrutement</title>
+    <link rel="stylesheet" href="public/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            padding: 20px;
+        }
+        .job-management-container {
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .job-management-container h2 {
+            margin-bottom: 20px;
+        }
+        .job-item {
+            margin-bottom: 20px;
+            padding: 20px;
+            border: 1px solid #e0e0e0;
+            border-radius: 5px;
+        }
+        .job-item .btn {
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="job-management-container">
+            <h2 class="text-center">Gérer les Offres d'Emploi</h2>
+            <div class="job-item">
+                <h5>Titre du Poste: Développeur Web</h5>
+                <p>Entreprise: Tech Solutions</p>
+                <p>Localisation: Paris, France</p>
+                <p>Type de Contrat: Temps Plein</p>
+                <p>Salaire: 45,000€ - 55,000€ / an</p>
+                <div>
+                    <button class="btn btn-warning">Mettre en Pause</button>
+                    <button class="btn btn-primary">Modifier</button>
+                    <button class="btn btn-danger">Supprimer</button>
+                </div>
+            </div>
+            <div class="job-item">
+                <h5>Titre du Poste: Analyste de Données</h5>
+                <p>Entreprise: Data Insights</p>
+                <p>Localisation: Lyon, France</p>
+                <p>Type de Contrat: Temps Partiel</p>
+                <p>Salaire: 35,000€ - 45,000€ / an</p>
+                <div>
+                    <button class="btn btn-warning">Mettre en Pause</button>
+                    <button class="btn btn-primary">Modifier</button>
+                    <button class="btn btn-danger">Supprimer</button>
+                </div>
+            </div>
+            <!-- Ajoute plus d'offres d'emploi ici -->
+            <a href="" class="btn btn-success">Nouvelle offre</a>
+        </div>
+    </div>
+</body>
+</html>
