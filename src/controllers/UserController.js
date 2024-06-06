@@ -19,14 +19,14 @@ exports.login = (req, res) => {
                     res.cookie('token', token, {httpOnly: true});
                     res.redirect('/');
                 } else {
-                    res.send("wrong username or password");
+                    res.render("login.ejs", {error : "Wrong username or password !"});
                 }
             })
             .catch(() => {
-                res.send('error lo,gin inin oalqdpeka;')
+                res.render("login.ejs", {error: "Internal server error !"})
             })
         } else {
-            res.send("wrong username or password");
+            res.render("login.ejs", {error : "Wrong username or password !"});
         }
     })
     .catch(() => {
@@ -51,10 +51,10 @@ exports.signup = (req, res) => {
                 })
             })
             .catch(error => {
-                res.send("Error while hashing pwd");
+                res.send("Error while hashing pwd !");
             })
         } else {
-            res.send("user exists !");
+            res.render("signup.ejs", {error: "Email already used !"});
         }
     })
 };

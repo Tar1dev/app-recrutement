@@ -2,11 +2,11 @@ const express = require('express');
 const mongoose = require('mongoose')
 const path = require('path');
 const cookieParser = require('cookie-parser');
-const auth = require('./middlewares/auth');
 require('dotenv').config();
 
 //routers
 const UserRouter = require('./routers/UserRouter');
+const OfferRouter = require('./routers/OfferRouter');
 
 // database connection
 mongoose.connect(process.env.DB_URI)
@@ -29,22 +29,15 @@ app.use(cookieParser());
 
 // login and signup pages
 app.get('/login', (req, res) => {
-    res.render('login.ejs');
+    res.render('login.ejs', {error: null});
 });
 app.get('/signup', (req, res) => {
-    res.render('signup.ejs');
+    res.render('signup.ejs', {error: null});
 });
+
 
 app.use('/', UserRouter);
-
-app.get('/', auth, (req, res) => {
-    const acctype = req.auth.acctype;
-    if (acctype === "chercheurEmploi") {
-        res.render("utilisateur.ejs");
-    } else if (acctype === "recruteur") {
-        res.render("recruteur.ejs")
-    }
-});
+app.use('/', OfferRouter);
 
 
 app.listen(PORT, () => {

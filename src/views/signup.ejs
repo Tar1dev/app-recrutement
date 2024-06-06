@@ -55,6 +55,11 @@
                 </select>
             </div>
             <button type="submit" class="btn btn-primary btn-signup mt-3">Créer un Compte</button>
+            <% if (error) { %>
+                <div class="alert alert-danger mt-3" role="alert">
+                    Error : <%= error %>
+                </div>
+            <% } %>
         </form>
     </div>
 </html>

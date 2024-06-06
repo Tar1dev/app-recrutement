@@ -34,25 +34,17 @@
     <div class="container">
         <div class="job-listing-container">
             <h2 class="text-center">Offres d'Emploi</h2>
-            <div class="job-item">
-                <h5>Titre du Poste: Développeur Web</h5>
-                <p>Entreprise: Tech Solutions</p>
-                <p>Localisation: Paris, France</p>
-                <p>Type de Contrat: Temps Plein</p>
-                <p>Salaire: 45,000€ - 55,000€ / an</p>
-                <p>Description: Nous recherchons un développeur web talentueux pour rejoindre notre équipe dynamique...</p>
-                <button class="btn btn-primary">Postuler</button>
-            </div>
-            <div class="job-item">
-                <h5>Titre du Poste: Analyste de Données</h5>
-                <p>Entreprise: Data Insights</p>
-                <p>Localisation: Lyon, France</p>
-                <p>Type de Contrat: Temps Partiel</p>
-                <p>Salaire: 35,000€ - 45,000€ / an</p>
-                <p>Description: Nous cherchons un analyste de données expérimenté pour aider à interpréter des données complexes...</p>
-                <button class="btn btn-primary">Postuler</button>
-            </div>
-            <!-- Ajoutez plus d'offres d'emploi ici -->
+            <% offers.forEach(offer => { %>
+                <div class="job-item">
+                    <h5><%= offer.title %></h5>
+                    <p>Entreprise: <%= offer.company %></p>
+                    <p>Localisation: <%= offer.city %></p>
+                    <p>Type de Contrat: <%= offer.contract %></p>
+                    <p>Salaire: <%= offer.minSalary * 10 %>,000€ - <%= offer.maxSalary * 10 %>,000€ / an</p>
+                    <p>Description: <%= offer.description %></p>
+                    <button class="btn btn-primary">Postuler</button>
+                </div>
+            <% }); %>
         </div>
     </div>
 </body>
