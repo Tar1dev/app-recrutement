@@ -30,7 +30,7 @@ exports.create = (req, res) => {
             })
             offer.save()
             .then(offer => {
-                res.send(offer);
+                res.redirect('/');
             })
             .catch(error => {
                 res.send(error);
@@ -40,3 +40,42 @@ exports.create = (req, res) => {
 
     }
 }
+
+exports.delete = (req, res) => {
+    const acctype = req.auth.acctype;
+    const userId = req.auth.id;
+    const offerId = req.params.id;
+    if (acctype == "recruteur") {
+        Offer.deleteOne({_id: offerId, owner: userId})
+        .then(() => {
+            res.redirect('/');
+        })
+        .catch(() => {
+            res.send("500 - Internal Server Error")
+        })
+    }
+};
+
+
+exports.update = (req, res) => {
+    const acctype = req.auth.acctype;
+    const userId = req.auth.id;
+    const offerId = req.params.id;
+    if (acctype == "recruteur") {
+        if (req.method == "POST") {
+            Offer.updateOne({ _id: offerId, owner:userId}, { ...req.body })
+            .then(() => {
+                res.redirect('/');
+            })
+            .catch(error => {
+                res.send("An error occured" + error)
+                console.log(error);
+            });
+        } else if (req.method == "GET") {
+            Offer.findOne({_id: req.params.id})
+            .then(offer => {
+                res.render("update_offre.ejs", {offer: offer});
+            })
+        }
+    } 
+};

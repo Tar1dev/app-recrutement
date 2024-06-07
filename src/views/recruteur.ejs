@@ -44,8 +44,8 @@
                     <p>Description: <%= offer.description %></p>
                     <div>
                         <button class="btn btn-warning">Mettre en Pause</button>
-                        <button class="btn btn-primary">Modifier</button>
-                        <button class="btn btn-danger">Supprimer</button>
+                        <a class="btn btn-primary" href="/update/<%= offer._id %>">Modifier</a>
+                        <a class="btn btn-danger" href="/delete/<%= offer._id %>">Supprimer</a>
                     </div>
                 </div>
             <% }); %>

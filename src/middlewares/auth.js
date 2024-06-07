@@ -13,6 +13,6 @@ module.exports = (req, res, next) => {
         };
         next();
     } catch(error) {
-        res.send("401 - Unothorized");
+        res.redirect("/");
     }
 };
